@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[sub_resource type="Gradient" id="Gradient_7dm0k"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ig7tw"]
+gradient = SubResource("Gradient_7dm0k")
+
+[node name="main" type="Node2D" unique_id=1453995880]
+position = Vector2(0, -14)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=157049873]
+position = Vector2(515, 314)
+scale = Vector2(7.460938, 1294.9999)
+texture = SubResource("GradientTexture1D_ig7tw")
