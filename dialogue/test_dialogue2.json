@@ -1,0 +1,4 @@
+[
+	{"name" : "npc1", "text": "Hi, i am npc2, what is your name?"},
+	{"name" : "you", "text": "I am <Player>"},
+]

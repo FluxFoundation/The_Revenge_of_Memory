@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bi2vkmime74im"]
+
+[ext_resource type="Script" uid="uid://7g251qjkgyk" path="res://npc_dialogue.gd" id="1_ktpjd"]
+[ext_resource type="Texture2D" uid="uid://dwxskqvaxnq42" path="res://Modern tiles_Free/Characters_free/RPGMAKERMV/Characters_MV.png" id="1_ox81i"]
+[ext_resource type="PackedScene" uid="uid://oavk610lthyy" path="res://dialogue/dialogue.tscn" id="3_ureci"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ureci"]
+atlas = ExtResource("1_ox81i")
+region = Rect2(192, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubc05"]
+atlas = ExtResource("1_ox81i")
+region = Rect2(336, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3sv5"]
+atlas = ExtResource("1_ox81i")
+region = Rect2(480, 0, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fwoa0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ureci")
+}],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubc05")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3sv5")
+}],
+"loop": true,
+"name": &"idle3",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htnrw"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktpjd"]
+radius = 28.93777
+
+[node name="NpcDialogue" type="CharacterBody2D" unique_id=1997499349]
+script = ExtResource("1_ktpjd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1117848670]
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(0.33333334, 0.2916667)
+sprite_frames = SubResource("SpriteFrames_fwoa0")
+animation = &"idle3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1481300506]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_htnrw")
+
+[node name="ChatDetectionArea" type="Area2D" parent="." unique_id=1990703657]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetectionArea" unique_id=1520511593]
+position = Vector2(0.0625, 0.125)
+shape = SubResource("CircleShape2D_ktpjd")
+
+[node name="Dialogue" parent="." unique_id=1060203113 instance=ExtResource("3_ureci")]
+offset_left = -33.0
+offset_right = 7.0
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]

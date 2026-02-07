@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ewfmaaiongv4"]
+
+[ext_resource type="PackedScene" uid="uid://cfn077rkuo3t3" path="res://Player/Player.tscn" id="1_sjb42"]
+[ext_resource type="PackedScene" uid="uid://uvk5ydgx1kv0" path="res://levels/map1.tscn" id="2_pdtm5"]
+[ext_resource type="PackedScene" uid="uid://c807j3felboiu" path="res://levels/next_level_portal.tscn" id="3_b3oru"]
+[ext_resource type="PackedScene" uid="uid://bi2vkmime74im" path="res://npc_dialogue.tscn" id="4_ua5ty"]
+
+[node name="Level1" type="Node2D" unique_id=231365308]
+y_sort_enabled = true
+
+[node name="map1" parent="." unique_id=1659398513 instance=ExtResource("2_pdtm5")]
+
+[node name="NextLevelPortal" parent="." unique_id=108332884 instance=ExtResource("3_b3oru")]
+position = Vector2(228, 72)
+
+[node name="NpcDialogue" parent="." unique_id=1997499349 instance=ExtResource("4_ua5ty")]
+position = Vector2(373, 201)
+file = "res://dialogue/test_dialogue1.json"
+
+[node name="NpcDialogue2" parent="." unique_id=1569971623 instance=ExtResource("4_ua5ty")]
+position = Vector2(400, 138)
+file = "res://dialogue/test_dialogue2.json"
+type = 2
+
+[node name="NpcDialogue3" parent="." unique_id=630954881 instance=ExtResource("4_ua5ty")]
+position = Vector2(410, 61)
+file = "res://dialogue/test_dialogue3.json"
+type = 3
+
+[node name="Player" parent="." unique_id=1292275202 instance=ExtResource("1_sjb42")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(224.00002, 143.99998)

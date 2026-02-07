@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c807j3felboiu"]
+
+[ext_resource type="Script" uid="uid://mh5ffvostwvm" path="res://levels/scripts/next_level_portal.gd" id="1_fid13"]
+[ext_resource type="Texture2D" uid="uid://cww0ia7rgihx" path="res://icon.svg" id="1_ue4hn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fid13"]
+size = Vector2(14, 14)
+
+[node name="NextLevelPortal" type="Area2D" unique_id=108332884]
+texture_filter = 2
+script = ExtResource("1_fid13")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1359343553]
+texture_filter = 2
+position = Vector2(3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.1171875, 0.1171875)
+texture = ExtResource("1_ue4hn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143433217]
+shape = SubResource("RectangleShape2D_fid13")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
