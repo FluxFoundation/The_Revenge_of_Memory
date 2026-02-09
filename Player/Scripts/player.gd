@@ -17,8 +17,10 @@ func _ready() -> void:
 # Chiamata ogni frame per leggere gli input
 func _process(delta) :
 	# Calcola la direzione di movimento dagli input delle frecce/WASD
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left") 
-	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	direction = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up","down")
+	).normalized()
 
 # Chiamata ogni frame fisico per applicare il movimento
 func _physics_process(delta) :

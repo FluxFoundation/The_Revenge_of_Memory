@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dw5u067jxjjdy" path="res://Player/Scripts/state_idle.gd" id="4_ddoul"]
 [ext_resource type="Script" uid="uid://bpisf4bgv5v3p" path="res://Player/Scripts/state_walk.gd" id="5_8g4oa"]
 [ext_resource type="Texture2D" uid="uid://dwxskqvaxnq42" path="res://Modern tiles_Free/Characters_free/RPGMAKERMV/Characters_MV.png" id="6_6ysni"]
+[ext_resource type="Script" uid="uid://crsn44bqvxcl3" path="res://Player/Scripts/state_run.gd" id="6_vlldt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8g4oa"]
 size = Vector2(160.00012, 200.00012)
@@ -458,6 +459,9 @@ script = ExtResource("4_ddoul")
 
 [node name="Walk" type="Node" parent="StateMachine" unique_id=158652265]
 script = ExtResource("5_8g4oa")
+
+[node name="Run" type="Node" parent="StateMachine" unique_id=1612487358]
+script = ExtResource("6_vlldt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=789611215]
 scale = Vector2(3.5416665, 2.9166665)

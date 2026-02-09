@@ -2,7 +2,6 @@ class_name State_idle extends State
 
 # Riferimento allo stato di camminata
 @onready var walk : State = $"../Walk"
-
 # Chiamata quando il player entra nello stato idle
 func enter() -> void :
 	# Avvia l'animazione idle
